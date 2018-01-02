@@ -1,0 +1,36 @@
+
+
+<a href="https://en.wikipedia.org/wiki/Special:Random">random article</a>
+
+
+<html>
+    <head>
+           <link rel="stylesheet" href="styles.css"> 
+    
+        <title>Site Template - Welcome!</title>
+    </head>
+
+    <body>
+      <input id="toSearch" type="text"></input>
+<button id="search">Click</button>
+<a href='https://en.wikipedia.org/wiki/Wikipedia:Random'>Random article</a>
+<h1 id="alert"></h1>
+<ol id="myList">
+  
+</ol>
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+    <script>
+        
+$("#search").on("click", function() {
+    console.log("step 1");
+    $.getJSON("https://en.wikipedia.org/w/api.php?action=query&list=search&prop=links&srsearch=" + $("#query").val() + "&utf8=&format=json", function(json) {
+       console.log("step 2");
+       $("#results").html(JSON.stringify(json));
+      });
+});
+        
+    </script>
+</html>
