@@ -1,8 +1,28 @@
-  li {
-    margin-top: 25px;
-    
-    -webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 0.5s; /* Firefox < 16 */
+
+$black: #313129;
+$white: #ffffe6;
+
+$primary-color: #ff4a10;
+$primary-color-dark: darken( $primary-color, 10% );
+$primary-color-tint: lighten( $primary-color, 15% );
+$secondary-color: #4a4a41;
+$secondary-color-dark: darken( $secondary-color, 10% );
+$secondary-color-tint: lighten( $secondary-color, 30% );
+
+$primary-font: "Lato", sans-serif;
+$header-font: "Playfair Display", serif;
+
+ol {
+  margin: 0;
+  width: 100%;
+  padding: 0;
+}
+
+li {
+ width: 100%;
+ background-color: darken( #B22222, 15% );
+ -webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 0.5s; /* Firefox < 16 */
         -ms-animation: fadein 0.5s; /* Internet Explorer */
          -o-animation: fadein 0.5s; /* Opera < 12.1 */
             animation: fadein 0.5s;
@@ -39,4 +59,58 @@
 
 body{
   background-color: #B22222;
+  margin: 0;
+}
+
+.numbers-fancy {
+ --start: 0;
+ counter-reset: fancyCounter var(--start);
+ list-style: none;
+	 li {
+		display: flex;
+		position: relative;
+		z-index: 2;
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
+     
+    
+
+		&::before {
+			content: counter(fancyCounter);
+			counter-increment: fancyCounter;
+			position: relative;
+			z-index: 1;
+			width: 60px;
+			font-family: $header-font;
+			font-size: 4em;
+			letter-spacing: -0.05em;
+			font-style: italic;
+			color: $primary-color-tint;
+			opacity: 0.2;
+		}
+		
+		&::after {
+			content: '';
+			position: absolute;
+			z-index: -1;
+			top: 0px;
+			left: 15px;
+			width: 100px;
+			height: 100px;
+		}
+	}
+}
+
+h1{
+  margin-left: 20px;
+  margin-right: 5px;
+  width: 300px;
+}
+
+ li:nth-child(even) { 
+       background: #B22222; 
+     }
+
+p{
+  float: right;
 }

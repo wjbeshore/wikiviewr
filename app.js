@@ -1,4 +1,3 @@
-
 var i = 0;
 
 $("#search").on("click", function() {
@@ -37,3 +36,6 @@ $("#search").on("click", function() {
     $("#alert").html("Please enter your search.");
   }
 });
+
+
+     
