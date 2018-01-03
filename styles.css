@@ -111,6 +111,25 @@ h1{
        background: #B22222; 
      }
 
+.searchBox{
+  width: 33%;
+  margin: 150px auto;
+  text-align: center;
+}
+
+button{
+  border: none;
+  background-color: #B22222;
+  font-size: 16px;
+}
+
+#random{
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+}
+
 p{
   float: right;
+  font-size: 25px;
 }
